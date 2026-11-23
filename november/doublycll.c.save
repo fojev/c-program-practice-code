@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+	struct Node* prev;
+	int data;
+	struct Node* next;
+}*head=NULL;
+void createList(int);
+void traverseList();
+void insertNode();
+void createList(int n){
+	struct Node* temp;
+	int i;
+	for(i=1;i<=n;i++){
+		temp=(struct Node*)malloc(sizeof(struct Node));
+		temp->prev=temp;
+		temp->next=temp;
+		printf("Eneter data\n");
+		scanf("%d",&temp->data);
+		if(i==1||head==NULL){
+			head=temp;
+		}else{
+			struct Node* p=head;
+			while(p->next!=head)p=p->next;
+			p->next=temp;
+			temp->prev=p;
+			temp->next=head;
+			head->prev=temp;
+		}
+	}
+}
+void traverseList(){
+	struct Node* p=head;
+	while(p->next!=head){
+		printf("%d\t",p->data);
+		p=p->next;
+	}
+	printf("%d\n",p->data);
+	p=p->next;
+	printf("%d\t",p->data);
+	p=p->prev;
+	printf("%d\n",p->data);
+	while(p!=head){
+		printf("%d\t",p->data);
+		p=p->prev;
+	}
+	printf("%d\n",p->data);
+}
+int main(int argc,char*argv[]){
+	int option,n,data,pos;
+	while(1){
+		printf("1.CreateList\n");
+		printf("2.TraverseList\n");
+		printf("3.InsertNode");
+		printf("10.Exit\n");
+		scanf("%d",&option);
+		switch(option){
+				case 1:
+					printf("Enter no. of Nodes\n");
+					scanf("%d",&n);
+					createList(n);
+					break;
+				case 2:
+					traverseList();
+					break;
+				case 3:
+					printf("Enter position no.\n");
+					scanf("%d",&);
+					insertNode(pos);
+					break;
+				case 10:
+					exit(0);
+				default:
+					printf("Wrong option\n");
+		}
+	}
+}

@@ -1,0 +1,8 @@
+#include<stdio.h>
+void acs(int*a,int len){
+	int i;
+	for(i=0;i<len;i++);
+		printf("%d\t",a[i]);
+	}
+}
+void

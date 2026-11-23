@@ -1,0 +1,6 @@
+#include<stdio.h>
+#include<default.h>
+int  main(){
+	printf("Hello World\n");
+	abc
+

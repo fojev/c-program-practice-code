@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<string.h>
+char* addrof(char*s,char ch){
+	while(*s!='\0';{
+		if(*s==ch){
+			return s;
+		}
+		s++;
+	}
+	return NULL;
+}
+int main(){
+	char*str="Lucknow Junction";
+	int charr,i,j;
+	printf("Enter char to find:\n");
+	scanf("%s\n",&charr);
+	addrof(char*s,char ch);
+
